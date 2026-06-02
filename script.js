@@ -45,8 +45,10 @@ const purchItem = function() {
 
 const calcTotal = () => {
     let total = 0;
+    let cartItems = 0;
     purchaseList.forEach((k,v) => {
         total += v.item;
+        cartItems++;
     })
     for (let i=0; i<purchaseList.length; i++) {
         total += purchaseList[i].item;
