@@ -37,8 +37,8 @@ const purchItem = function () {
     console.log(userMoney);
 
     purchaseList.push({
-        money: userMoney.value,
-        name: itemPurch.value,
+        money: userMoney,
+        name: itemPurch,
     });
 
     document.getElementById("cart").innerHTML = calcTotal(purchaseList)
