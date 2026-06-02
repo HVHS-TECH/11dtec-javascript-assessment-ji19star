@@ -41,29 +41,17 @@ const purchItem = function() {
     });
 }
 
-function cartItemProcessor(k, v) {
-    total += v.item;
-    cartItems++;
-}
-
-function peener(callback) {
-    // do some stuff
-    sizeOfPoop = 'big'
-
-    //notify callback
-    callback(sizeOfPoop);
-}
-
-peener((arg) => { console.log(arg); })
-
 const calcTotal = () => {
     let total = 0;
     let cartItems = 0;
 
-    purchaseList.forEach(cartItemProcessor);
+    purchaseList.forEach((k, v) {
+        total += v.item;
+    });
 
     for (let i=0; i<purchaseList.length; i++) {
         total += purchaseList[i].item;
     }
+
     return total
 }
