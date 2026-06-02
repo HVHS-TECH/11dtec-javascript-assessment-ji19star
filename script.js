@@ -45,7 +45,7 @@ const calcTotal = () => {
     let total = 0;
     let cartItems = 0;
 
-    purchaseList.forEach((k, v) => {
+    purchaseList.forEach((alpha, skibidi) => {
         total += v.item; 
     });
 
