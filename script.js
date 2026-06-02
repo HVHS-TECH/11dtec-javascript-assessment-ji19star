@@ -32,7 +32,6 @@ FUNCTIONS
 
 function purchItem() {
 
-
     purchaseList.push()({
         money: userMoney.value ,
         item: itemPurch.value,
