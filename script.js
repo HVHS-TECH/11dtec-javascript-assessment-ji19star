@@ -8,11 +8,10 @@ VARIABLES
 
 //purchase var
 const PURCH_FIELD = document.getElementById("purchaseField");
-
 let purchaseList = [];
 
 //Money
-const USER_FIELD = document.getElementById("moneyField");
+const MONEY_FIELD = document.getElementById("moneyField");
 //let userMoney = USER_MONEY.value;
 
 
@@ -30,7 +29,7 @@ MAIN CODE
 FUNCTIONS
 ***********/
 
-const purchItem = function() {
+const purchItem = function () {
     //define inside of function to set, bc when it runs the function it becomes that thing
     let itemPurch = PURCH_FIELD.value;
     console.log(itemPurch);
@@ -40,13 +39,13 @@ const purchItem = function() {
         name: itemPurch.value,
     });
 }
-
+ 
 const calcTotal = () => {
     let total = 0;
     let cartItems = 0;
 
     purchaseList.forEach((item) => {
-        total += item.item; 
+        total += item.item;
     });
 
 
