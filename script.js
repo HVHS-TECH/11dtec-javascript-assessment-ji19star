@@ -29,15 +29,16 @@ const PURCHASE_LIST = [];
 MAIN CODE
 ***********/
 
+for (product in PRODUCTS) {
+    
+}
 
 
 /**********
 FUNCTIONS
 ***********/
 
-
 document.getElementById("breadListings").innerHTML = PRODUCTS;
-
 
 const purchItem = function () {
     //define inside of function to set, bc when it runs the function it becomes that thing
