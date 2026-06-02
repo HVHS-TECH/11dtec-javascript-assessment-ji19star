@@ -35,21 +35,21 @@ const purchItem = function () {
     let userMoney = MONEY_FIELD.value;
     console.log(itemPurch);
     console.log(userMoney);
-    
+
     purchaseList.push({
         money: userMoney.value,
         name: itemPurch.value,
     });
+
+    document.getElementById("cart").innerHTML = calcTotal(purchaseList)
 }
 
 const calcTotal = () => {
     let total = 0;
-    let cartItems = 0;
 
     purchaseList.forEach((item) => {
-        total += item.item;
+        total += parseFloat(item.money);
     });
-
 
     return total
 }
