@@ -12,7 +12,7 @@ let purchaseList = [];
 
 //Money
 const MONEY_FIELD = document.getElementById("moneyField");
-//let userMoney = USER_MONEY.value;
+
 
 
 //
@@ -32,14 +32,16 @@ FUNCTIONS
 const purchItem = function () {
     //define inside of function to set, bc when it runs the function it becomes that thing
     let itemPurch = PURCH_FIELD.value;
+    let userMoney = MONEY_FIELD.value;
     console.log(itemPurch);
-
+    console.log(userMoney);
+    
     purchaseList.push({
-        // money: userMoney.value ,
+        money: userMoney.value,
         name: itemPurch.value,
     });
 }
- 
+
 const calcTotal = () => {
     let total = 0;
     let cartItems = 0;
