@@ -10,10 +10,22 @@ VARIABLES
 const PURCH_FIELD = document.getElementById("purchaseField");
 let purchaseList = [];
 
-//Money
+//price of thing
 const MONEY_FIELD = document.getElementById("moneyField");
 
-//
+//objects
+const SOURDOUGH = { 
+name: sourDough,
+price: 17 ,
+};
+
+const CHOC_CAKE = { 
+name: chocolateCake,
+price: 16 ,
+};
+
+
+
 
 /**********
 MAIN CODE
@@ -26,6 +38,10 @@ MAIN CODE
 /**********
 FUNCTIONS
 ***********/
+
+
+document.getElementById("breadListings").innerHTML = 
+
 
 const purchItem = function () {
     //define inside of function to set, bc when it runs the function it becomes that thing
