@@ -13,7 +13,7 @@ let purchaseList = [];
 
 //Money
 const USER_FIELD = document.getElementById("moneyField");
-let userMoney = USER_MONEY.value;
+//let userMoney = USER_MONEY.value;
 
 
 //
@@ -32,8 +32,10 @@ FUNCTIONS
 
 function purchItem() {
 
-    purchaseList.push()({
-        money: userMoney.value ,
+    console.log(itemPurch);
+
+    purchaseList.push({
+        // money: userMoney.value ,
         item: itemPurch.value,
     });
 }
