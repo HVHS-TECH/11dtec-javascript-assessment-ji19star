@@ -30,7 +30,7 @@ MAIN CODE
 FUNCTIONS
 ***********/
 
-function purchItem() {
+purchItem() {
     //define inside of function to set, bc when it runs the function it becomes that thing
     let itemPurch = PURCH_FIELD.value;
     console.log(itemPurch);
@@ -39,4 +39,17 @@ function purchItem() {
         // money: userMoney.value ,
         item: itemPurch.value,
     });
+}
+
+
+
+const calcTotal = () => {
+    let total = 0;
+    purchaseList.forEach((k,v) => {
+        total += v.item;
+    })
+    for (let i=0; i<purchaseList.length; i++) {
+        total += purchaseList[i].item;
+    }
+    return total
 }
