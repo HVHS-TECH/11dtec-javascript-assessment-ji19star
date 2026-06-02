@@ -25,7 +25,7 @@ price: 16 ,
 //arrays
 
 let purchaseList = [];
-let breadlists =[];
+let breadLists =[];
 
 
 /**********
@@ -39,10 +39,11 @@ MAIN CODE
 /**********
 FUNCTIONS
 ***********/
+ const breadlist = () => {
+     breadLists.push(  )
 
-const BREAD_LIST = () => {
-    
-}
+ }
+
 
 
 document.getElementById("breadListings").innerHTML = 
