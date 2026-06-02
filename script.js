@@ -32,10 +32,13 @@ FUNCTIONS
 
 function purchItem() {
 
+    console.log(itemPurch)
+
+
+
+
     purchaseList.push()({
         money: userMoney.value ,
         item: itemPurch.value,
-
     });
-
 }
