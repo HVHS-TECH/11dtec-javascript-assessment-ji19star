@@ -8,7 +8,7 @@ VARIABLES
 
 //purchase var
 const PURCH_FIELD = document.getElementById("purchaseField");
-let itemPurch = PURCH_FIELD.value;
+
 let purchaseList = [];
 
 //Money
@@ -31,7 +31,8 @@ FUNCTIONS
 ***********/
 
 function purchItem() {
-
+    //define inside of function to set, bc when it runs the function it becomes that thing
+    let itemPurch = PURCH_FIELD.value;
     console.log(itemPurch);
 
     purchaseList.push({
