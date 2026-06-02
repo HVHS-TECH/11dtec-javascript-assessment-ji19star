@@ -39,9 +39,9 @@ for (let id in PRODUCTS) {
     products += `
     <div>
         <h3>${PRODUCTS[id].name}</h3>
-        <div>$${PRODUCTS[id].price}<div>
-        <button onclick="addToCart(${id})">Add to Cart<button>
-    <div>
+        <div>$${PRODUCTS[id].price}</div>
+        <button onclick="addToCart('${id}')">Add to Cart</button>
+    </div>
     `
 }
 PRODUCTS_CONTAINER.innerHTML = products;
