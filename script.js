@@ -30,12 +30,16 @@ const PURCHASE_LIST = [];
 MAIN CODE
 ***********/
 
-window.addToCart = function(id) {
+// global function - no const or let
+addToCart = function(id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
     document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
 }
 
+// init the prunducts html
 let products = "";
+
+// build the products html
 for (let id in PRODUCTS) {
     products += `
     <div>
@@ -45,6 +49,8 @@ for (let id in PRODUCTS) {
     </div>
     `
 }
+
+// inject the products html
 PRODUCTS_CONTAINER.innerHTML = products;
 
 /**********
