@@ -11,11 +11,18 @@ const PURCH_FIELD = document.getElementById("purchaseField");
 
 const MONEY_FIELD = document.getElementById("moneyField");
 
+const PRODUCTS = {
+    sourDough: { 
+        name: "Sour Dough",
+        price: 17,
+    } 
+}
+
+products[0]
+PRODUCTS.sourDough
+
 //objects
-const SOURDOUGH = { 
-name: sourDough,
-price: 17 ,
-};
+const SOURDOUGH = ;
 
 const CHOC_CAKE = { 
 name: chocolateCake,
