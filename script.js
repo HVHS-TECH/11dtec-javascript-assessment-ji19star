@@ -6,12 +6,9 @@ console.log("Hello world!")
 VARIABLES
 ***********/
 
-//purchase var
+// Fields
 const PURCH_FIELD = document.getElementById("purchaseField");
-
 const MONEY_FIELD = document.getElementById("moneyField");
-
-
 
 //is a map , not array different 
 const PRODUCTS = {
@@ -26,22 +23,11 @@ const PRODUCTS = {
     }
 };
 
-
-
-//objects
-
-
-//arrays
-
-let purchaseList = [];
-
-
+const PURCHASE_LIST = [];
 
 /**********
 MAIN CODE
 ***********/
-
-
 
 
 
@@ -61,18 +47,18 @@ const purchItem = function () {
     console.log(userMoney);
 
     //should be the name of item, and price .. can i get it going auto when add
-    purchaseList.push({
+    PURCHASE_LIST.push({
         money: userMoney,
         name: itemPurch,
     });
 
-    document.getElementById("cart").innerHTML = calcTotal(purchaseList)
+    document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
 }
 
 // calculaates the price of things added to the cart and prints onto html
 const calcTotal = () => {
     let total = 0;
-    purchaseList.forEach((item) => {
+    PURCHASE_LIST.forEach((item) => {
         total += parseFloat(item.money);
     });
     return total
