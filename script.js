@@ -37,7 +37,7 @@ const purchItem = function() {
 
     purchaseList.push({
         // money: userMoney.value ,
-        item: itemPurch.value,
+        name: itemPurch.value,
     });
 }
 
@@ -45,8 +45,8 @@ const calcTotal = () => {
     let total = 0;
     let cartItems = 0;
 
-    purchaseList.forEach((alpha, skibidi) => {
-        total += v.item; 
+    purchaseList.forEach((item) => {
+        total += item.item; 
     });
 
 
