@@ -11,28 +11,30 @@ const PURCH_FIELD = document.getElementById("purchaseField");
 
 const MONEY_FIELD = document.getElementById("moneyField");
 
+
+
+//is a map , not array different 
 const PRODUCTS = {
-    sourDough: { 
+    sourDough: {
         name: "Sour Dough",
         price: 17,
-    } 
-}
+    },
 
-products[0]
-PRODUCTS.sourDough
+    chocolateCake: {
+        name: "chocolateCake",
+        price: 16,
+    }
+};
+
+
 
 //objects
-const SOURDOUGH = ;
 
-const CHOC_CAKE = { 
-name: chocolateCake,
-price: 16 ,
-};
 
 //arrays
 
 let purchaseList = [];
-let breadLists =[];
+
 
 
 /**********
@@ -46,14 +48,9 @@ MAIN CODE
 /**********
 FUNCTIONS
 ***********/
- const breadlist = () => {
-     breadLists.push(  )
-
- }
 
 
-
-document.getElementById("breadListings").innerHTML = 
+document.getElementById("breadListings").innerHTML = PRODUCTS;
 
 
 const purchItem = function () {
