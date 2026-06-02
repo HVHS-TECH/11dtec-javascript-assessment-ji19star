@@ -8,12 +8,13 @@ VARIABLES
 
 //purchase var
 const PURCH_FIELD = document.getElementById("purchaseField");
-let purchase = PURCH_FIELD.value;
+let itemPurch = PURCH_FIELD.value;
 let purchaseList = [];
 
-//waaaa
- let
- let
+//Money
+const USER_FIELD = document.getElementById("moneyField");
+let userMoney = USER_MONEY.value;
+
 
 //
 
@@ -31,5 +32,10 @@ FUNCTIONS
 
 function purchItem() {
 
+    purchaseList.push()({
+        money: userMoney.value ,
+        item: itemPurch.value,
+
+    });
 
 }
