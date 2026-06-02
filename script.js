@@ -8,9 +8,7 @@ VARIABLES
 
 //purchase var
 const PURCH_FIELD = document.getElementById("purchaseField");
-let purchaseList = [];
 
-//price of thing
 const MONEY_FIELD = document.getElementById("moneyField");
 
 //objects
@@ -24,7 +22,10 @@ name: chocolateCake,
 price: 16 ,
 };
 
+//arrays
 
+let purchaseList = [];
+let breadlists =[];
 
 
 /**********
@@ -38,6 +39,10 @@ MAIN CODE
 /**********
 FUNCTIONS
 ***********/
+
+const BREAD_LIST = () => {
+    
+}
 
 
 document.getElementById("breadListings").innerHTML = 
