@@ -32,6 +32,7 @@ MAIN CODE
 
 window.addToCart = function(id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
+    document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
 }
 
 let products = "";
@@ -72,7 +73,7 @@ FUNCTIONS
 const calcTotal = () => {
     let total = 0;
     PURCHASE_LIST.forEach((item) => {
-        total += parseFloat(item.money);
+        total += parseFloat(item.price);
     });
     return total
 }
