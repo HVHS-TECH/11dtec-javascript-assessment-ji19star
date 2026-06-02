@@ -30,7 +30,7 @@ MAIN CODE
 FUNCTIONS
 ***********/
 
-purchItem() {
+const purchItem = function() {
     //define inside of function to set, bc when it runs the function it becomes that thing
     let itemPurch = PURCH_FIELD.value;
     console.log(itemPurch);
