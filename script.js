@@ -15,12 +15,23 @@ const PRODUCTS_CONTAINER = document.getElementById("products");
 const PRODUCTS = {
     sourDough: {
         name: "Sour Dough",
+        price: 27,
+    },
+
+      maltRye: {
+        name: "Malt Rye",
         price: 17,
     },
 
+      maltRye: {
+        name: "White Bread",
+        price: 2,
+    },
+
+
     chocolateCake: {
-        name: "chocolateCake",
-        price: 16,
+        name: "Chocolate Cake",
+        price: 12,
     }
 };
 
@@ -61,6 +72,6 @@ const calcTotal = () => {
     let total = 0;
     PURCHASE_LIST.forEach((item) => {
         total += parseFloat(item.price);
-    });
+    });``
     return total
 }
