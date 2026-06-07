@@ -18,12 +18,12 @@ const PRODUCTS = {
         price: 27,
     },
 
-      maltRye: {
+    maltRye: {
         name: "Malt Rye",
         price: 17,
     },
 
-      maltRye: {
+    maltRye: {
         name: "White Bread",
         price: 2,
     },
@@ -41,8 +41,11 @@ const PURCHASE_LIST = [];
 MAIN CODE
 ***********/
 
+
+
+
 // global function - no const or let
-addToCart = function(id) {
+addToCart = function (id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
     document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
 }
@@ -64,6 +67,11 @@ for (let id in PRODUCTS) {
 // inject the products html
 PRODUCTS_CONTAINER.innerHTML = products;
 
+
+
+
+
+
 /**********
 FUNCTIONS
 ***********/
@@ -72,6 +80,13 @@ const calcTotal = () => {
     let total = 0;
     PURCHASE_LIST.forEach((item) => {
         total += parseFloat(item.price);
-    });``
+    }); ``
     return total
+}
+
+
+const top_function = () => {
+    console.log("clicked");
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
 }

@@ -1,154 +1,198 @@
-
 /*web fonts */
 
-    @font-face{
-        font-family:CRK_REG;
-        src:url(Fonts/CookieRunFont_TTF/CookieRun_Regular.ttf);
-    }
+@font-face {
+    font-family: CRK_REG;
+    src: url(Fonts/CookieRunFont_TTF/CookieRun_Regular.ttf);
+}
 
-    @font-face{
-        font-family:CRK_BOL;
-        src:url(Fonts/CookieRunFont_TTF/CookieRun_Bold.ttf);
-    }
-/* Responsive*/ 
-      
+@font-face {
+    font-family: CRK_BOL;
+    src: url(Fonts/CookieRunFont_TTF/CookieRun_Bold.ttf);
+}
+
+/* Responsive*/
+
 
 /*body*/
-    body{
-        background-color: #f7e9d5;
-    }
+body {
+    background-color: #f7e9d5;
+}
 
 /*header*/
-    .pg_tlt {
-    display:flex;
+.pg_tlt {
+    display: flex;
     justify-content: center;
     background-color: #fef9ef;
     color: #011627;
     font-family: CRK_BOL;
-    border:2px solid #011627;
+    border: 2px solid #011627;
     border-radius: 30px;
     margin: 30px 50px;
-    outline:#5797a7 solid 4px;
-    }
+    outline: #5797a7 solid 4px;
+}
 
-    .logo{
-       float:left;
-       display: flex;
-       width:auto ;
-       height: 150px; ;
-       justify-content: left;
-       size:20px;
-    }
+.logo {
+    float: left;
+    display: flex;
+    width: auto;
+    height: 150px;
+    ;
+    justify-content: left;
+    size: 20px;
+}
 
 /*nav*/
-    
-    .nav ul{
-        display: flex;
-        justify-content: center;
-        background-color: #fef9ef;
-        overflow: hidden;
-        font-family: CRK_REG;
-        margin: 20px 350px;
-        border: solid #011627;
-        outline:#5797a7 solid 5px;
-        border-radius: 30px;
-        list-style-type: none;
-       
-    }
 
-    .nav li a{
-        display: flex;
-        justify-content: center;
-        float:center;
-        background-color: #F18f01;
-        margin: 10px 60px;
-        border: solid #011627;
-        border-radius: 30px;
-        text-decoration: none;
-        color:#011627;
-        text-align: center;
-        padding:10px;
-        transform: scale(1.13);
-        transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
-    }
+.nav ul {
+    display: flex;
+    justify-content: center;
+    background-color: #fef9ef;
+    overflow: hidden;
+    font-family: CRK_REG;
+    margin: 20px 350px;
+    border: solid #011627;
+    outline: #5797a7 solid 5px;
+    border-radius: 30px;
+    list-style-type: none;
 
-    /*nav anim*/
-      .nav li a:hover{
-      background-color: rgb(255, 221, 198);
-      transform: scale(1.1);
-       
-    }
+}
+
+.nav li a {
+    display: flex;
+    justify-content: center;
+    float: center;
+    background-color: #F18f01;
+    margin: 10px 60px;
+    border: solid #011627;
+    border-radius: 30px;
+    text-decoration: none;
+    color: #011627;
+    text-align: center;
+    padding: 10px;
+    transform: scale(1.13);
+    transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/*nav anim*/
+.nav li a:hover {
+    background-color: rgb(255, 221, 198);
+    transform: scale(1.1);
+
+}
 
 /*bg elements*/
-    .bg{
-        display:flex;
-        justify-content:right ;
-        margin-left: 1750px;
-        background-image: url('Images/bread_T.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
+.bg {
+    display: flex;
+    justify-content: right;
+    margin-left: 1750px;
+    background-image: url('Images/bread_T.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+/*up button*/
+#top_button {
+    font-family: CRK_REG;
+    text-align: center;
+    background-color: #F18f01;
+    margin: 10px 60px;
+    border: solid #011627;
+    outline: solid #5797a7;
+    border-radius: 30px;
+    cursor: pointer;
+    color: #011627;
+    padding: 15px;
+    transform: scale(1.13);
+    transition: transform 0.3s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+#top_button:hover {
+    background-color: rgb(255, 221, 198);
+    transform: scale(1.1);
+}
+
+
+
 
 
 /*grid*/
-    .container {
+.container {
     display: grid;
-    grid-template-columns: auto auto ;
-    grid-template-rows: auto auto auto auto auto auto auto auto;
-    
+    grid-template-columns: auto auto auto auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     padding: 70 px;
-    gap:10px;
-    margin:40px 100px; /* 0 at start means no top or bottom*/
-    }
+    gap: 10px;
+    margin: 90px 100px;
+    /* 0 at start means no top or bottom*/
+}
 
 
-    .container div{
+.container div {
     padding: 10px;
     background-color: #fef9ef;
-    text-align :center;
-    font-size: 25px;
-    border:3px solid #011627;
+    text-align: left;
+    font-size: 22px;
+    border: 3px solid #011627;
     font-family: CRK_REG;
+    outline: #5797a7 solid 3px;
+}
+
+.container .box_1 {
     text-align: center;
-    outline:#5797a7 solid 3px;
-    }
+}
 
-     .container img{
+.container img {
     display: flex;
     justify-content: left;
     margin: 0 20%;
-    max-width: 60%;
+    max-width: 40%;
     height: auto;
-    }
+}
 
-     .container img {
+#mottos {
     display: flex;
     justify-content: left;
-    margin: 0 20%;
-    max-width: 60%;
+    width: 11%;
     height: auto;
-    }
+    float: left;
+    margin: 0 2%;
+    outline: solid #011627;
+    transform: scale(120%);
+}
 
-    .box_1{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end: 50 ;
-    }
+.box_1 {
 
-    .box_2{
-    grid-column-start: 1;
-    grid-column-end: 3;
+    grid-column-start: 0;
+    grid-column-end: 1;
     grid-row-start: 1;
-    grid-row-end:1;
-    }
+    grid-row-end: 1;
+}
 
-    .box_3{
-    gap:10px;
-    grid-column-start: 2;
-    grid-column-end: 2;
-    grid-row-start: 2;
-    grid-row-end:45;
-    }
+.box_2 {
+    grid-column-start: 0;
+    grid-column-end: 1;
+    grid-row-start: 0s;
+    grid-row-end: 10;
+    margin: 0px 2%;
+}
 
 
+.box_3 {
+    text-align: left;
+    grid-column-start: 0;
+    grid-column-end: 0;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    margin: 0px 2%;
+}
+
+.box_4 {
+    text-align: left;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    grid-row-start: 9;
+    grid-row-end: 10;
+    margin: 0px 2%;
+}
