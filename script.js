@@ -37,21 +37,13 @@ const PRODUCTS = {
 
 const PURCHASE_LIST = [];
 
-/**********
-MAIN CODE
-***********/
-
-
-
-
-// global function - no const or let
-addToCart = function (id) {
-    PURCHASE_LIST.push(PRODUCTS[id]);
-    document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
-}
 
 // init the prunducts html
 let products = "";
+
+/**********
+MAIN CODE
+***********/
 
 // build the products html
 for (let id in PRODUCTS) {
@@ -63,10 +55,8 @@ for (let id in PRODUCTS) {
     </div>
     `
 }
-
 // inject the products html
 PRODUCTS_CONTAINER.innerHTML = products;
-
 
 
 
@@ -75,6 +65,27 @@ PRODUCTS_CONTAINER.innerHTML = products;
 /**********
 FUNCTIONS
 ***********/
+
+// global function - no const or let
+addToCart = function (id) {
+    PURCHASE_LIST.push(PRODUCTS[id]);
+    document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
+}
+
+addToList = function (id) {
+    PURCHASE_LIST.push(PRODUCTS[id]);
+    document.getElementById("itemList").innerHTML = nameProd
+}
+ 
+//anon
+const nameProd = () => {
+    let total = 0;
+    PURCHASE_LIST.forEach((item) => {
+        total += parseFloat(item.name);
+    }); ``
+    return total
+}
+
 //anon function
 const calcTotal = () => {
     let total = 0;
@@ -83,7 +94,6 @@ const calcTotal = () => {
     }); ``
     return total
 }
-
 
 const top_function = () => {
     console.log("clicked");
