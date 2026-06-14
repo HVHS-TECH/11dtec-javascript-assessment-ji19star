@@ -1,0 +1,86 @@
+l<h1>Products</h1>
+<div id="products"></div>
+
+
+<h1>Shopping Cart</h1>
+<div id="cart"></div>
+
+
+<script>
+
+
+// product data
+const products = [
+  {
+    id: 'product-1',
+    name: 'Product 1',
+    description: 'Description for Product 1',
+    price: 19.99,
+  },
+  {
+    id: 'product-2',
+    name: 'Product 2',
+    description: 'Description for Product 2',
+    price: 29.99,
+  }
+];
+
+
+// Element references
+const productsContainer = document.getElementById('products');
+const cartContainer = document.getElementById('cart');
+
+
+// Initialize cart as an empty array to hold cart items
+const cart = [];
+
+
+/**
+ * Adds a product to the shopping cart. If the product already exists in the cart, it increments the quantity.
+ * @param {string} productId - The ID of the product to add to the cart.
+ */
+const addToCart = (productId) => {
+  const product = products.find(item => item.id === productId);
+  if (product) {
+    const cartItem = cart.find(item => item.product.id === productId);
+    if (cartItem) {
+      cartItem.qty += 1;
+    } else {
+      cart.push({product: product, qty: 1});
+    }
+    updateCart();
+  }
+};
+
+
+/**
+ * Updates the shopping cart display by rendering the current contents of the cart.
+ */
+const updateCart = () => {
+  let cartContent = '';
+  cart.forEach(item => {
+    cartContent += `<p>${item.product.name} - $${item.product.price} (Qty: ${item.qty})</p>`;
+  });
+  cartContainer.innerHTML = cartContent;
+};
+
+
+// Render products on page load
+let content = '';
+products.forEach(product => {
+  content += `
+    <div class="product">
+      <h2>${product.name}</h2>
+      <p>${product.description}</p>
+      <p>Price: $${product.price}</p>
+      <button onclick="addToCart('${product.id}')">Add to Cart</button>
+    </div>
+  `;
+});
+productsContainer.innerHTML = content;
+
+
+</script>
+
+
+

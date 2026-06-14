@@ -10,35 +10,37 @@ VARIABLES
 // const PURCH_FIELD = document.getElementById("purchaseField");
 // const MONEY_FIELD = document.getElementById("moneyField");
 const PRODUCTS_CONTAINER = document.getElementById("products");
+const CART_CONTAINER = document.getElementById("cart");
 
-//is a map , not array different 
-const PRODUCTS = {
-    sourDough: {
+// array of the items
+const PRODUCTS = [
+    // objects  in the array
+    //0
+    {
         name: "Sour Dough",
         price: 27,
     },
-
-    maltRye: {
+    //1
+    {
         name: "Malt Rye",
         price: 17,
     },
-
-    maltRye: {
+    //2
+    {
         name: "White Bread",
         price: 2,
     },
-
-
-    chocolateCake: {
+    //3
+    {
         name: "Chocolate Cake",
         price: 12,
     }
-};
+];
 
 const PURCHASE_LIST = [];
 
 
-// init the prunducts html
+// init the products html aka like makes em there kinds
 let products = "";
 
 /**********
@@ -67,18 +69,14 @@ FUNCTIONS
 ***********/
 
 // global function - no const or let
+// puts the items into the array and the calculates the prices
 addToCart = function (id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
-    document.getElementById("cart").innerHTML = calcTotal(PURCHASE_LIST)
+    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST)
 }
 
-addToList = function (id) {
-    PURCHASE_LIST.push(PRODUCTS[id]);
-    document.getElementById("itemList").innerHTML = nameProd
-}
- 
-//anon
-const nameProd = () => {
+//anon , prints the stuffs onto the pages
+const NAME_PROD = () => {
     let total = 0;
     PURCHASE_LIST.forEach((item) => {
         total += parseFloat(item.name);
@@ -86,8 +84,8 @@ const nameProd = () => {
     return total
 }
 
-//anon function
-const calcTotal = () => {
+//anon function   calculates the prices of the items
+const CALC_TOTAL = () => {
     let total = 0;
     PURCHASE_LIST.forEach((item) => {
         total += parseFloat(item.price);
@@ -95,7 +93,11 @@ const calcTotal = () => {
     return total
 }
 
-const top_function = () => {
+
+
+
+ //go to top of the pagw
+const TOP_FUNCTION = () => {
     console.log("clicked");
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
