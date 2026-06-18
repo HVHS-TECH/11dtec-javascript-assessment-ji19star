@@ -17,22 +17,22 @@ const PRODUCTS = [
     // objects  in the array
     //0
     {
-        name: "Sour Dough",
+        name: " Sour Dough <br>",
         price: 27,
     },
     //1
     {
-        name: "Malt Rye",
+        name: "Malt Rye<br>",
         price: 17,
     },
     //2
     {
-        name: "White Bread",
+        name: "White Bread<br>",
         price: 2,
     },
     //3
     {
-        name: "Chocolate Cake",
+        name: "Chocolate Cake<br>",
         price: 12,
     }
 ];
@@ -48,16 +48,48 @@ let productsInCart = "";
 MAIN CODE
 ***********/
 
-// build the products html
+// build the products into html through the javascrippt
 for (let id in PRODUCTS) {
     products += `
     <div>
         <h3>${PRODUCTS[id].name}</h3>
         <div>${PRODUCTS[id].price}</div>
-        <button onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
+        <button id="addTo" onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
     </div>
+
+    <style>
+        #addTo {
+            font-family: CRK_REG;
+            font-size:20px;
+            text-align: center;
+            background-color: #F18f01;
+            margin: 10px 60px;
+            border: solid #011627;
+            outline: solid #5797a7;
+            border-radius: 30px;
+            cursor: pointer;
+            color: #011627;
+            padding: 15px;
+            transform: scale(1.13);
+            transition: transform 0.03s ease-in-out, background-color 0.02s ease-in-out;
+        }
+
+        #addTo:hover {
+            background-color: rgb(255, 221, 198);
+            transform: scale(1.1);
+        }
+            </style>
     `
 }
+
+
+for (let id in PRODUCTS) {
+    products += `
+    
+    `
+}
+
+
 
 
 
@@ -72,14 +104,14 @@ PRODUCTS_CONTAINER.innerHTML = products;
 /**********
 FUNCTIONS
 ***********/
-// .. you removed the backtix cuz u forogot what it does rmebebr  that
+
 // global function - no const or let
 // puts the items into the array and the calculates the prices
 addToCart = function (id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
-    //PURCHASE_LIST.push(PRODUCTS[id]);           //calculates price n puts shows it
+             //calculates price n puts shows it
     document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST)
-    document.getElementById("itemList").innerHTML = PURCHASE_LIST;
+    document.getElementById("itemList").innerHTML = QUANT()
     console.log(PURCHASE_LIST)
 
 }
@@ -88,33 +120,18 @@ addToCart = function (id) {
 //anon , prints the stuffs onto theSS pages
 
 //what was this again??
-const NAME_PROD = () => {
-    let total = 0;
-    PURCHASE_LIST.forEach((item) => {
-        total += parseFloat(item.name);
-    });
-    return total
-}
-
-const NAME_PRINT = () => {
-
-    PURCHASE_LIST.forEach((item) => {
-        print(item.name)
-         
-    });
-
-}
 
 
-// amount of thing total in cart
+// Prints
 const QUANT = () => {
-    let total = 0;
+    let prodName ="" ;
     PURCHASE_LIST.forEach((item) => {
-        total += !parseFloat(item.name);
+        prodName += item.name;
     });
-    return total
-}
+    return prodName
+} 
 
+//PARSE FLOAT CHECK LIKE THE UHHH TTHING "FLOAT" IS DECIMALS BALBLA PARSE READS SMTHN
 
 //anon function   calculates the prices of the itemsSSS
 const CALC_TOTAL = () => {
@@ -125,7 +142,7 @@ const CALC_TOTAL = () => {
     return total
 }
 
-
+/***********extra functions**********/
 
 //go to top of the pagw
 const TOP_FUNCTION = () => {
