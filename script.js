@@ -19,21 +19,26 @@ const PRODUCTS = [
     {
         name: " Sour Dough <br>",
         price: 27,
+        photo: `<img src="bredImage/Bred_1.jpg" id="Photo">`,
+        quantity: null,
     },
     //1
     {
         name: "Malt Rye<br>",
         price: 17,
+        photo: `<img src="bredImage/Bred_9.jpg" id="Photo">`,
     },
     //2
     {
         name: "White Bread<br>",
         price: 2,
+        photo: `<img src="bredImage/Bred_3.jpg" id="Photo">`,
     },
     //3
     {
-        name: "Chocolate Cake<br>",
+        name: "Cinnamon Scroll<br>",
         price: 12,
+        photo: `<img src="bredImage/Bred_11.jpg" id="Photo">`,
     }
 ];
 // the arrary which contains the items in cart
@@ -54,10 +59,16 @@ for (let id in PRODUCTS) {
     <div>
         <h3>${PRODUCTS[id].name}</h3>
         <div>${PRODUCTS[id].price}</div>
+        <div>${PRODUCTS[id].photo}</div>
         <button id="addTo" onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
     </div>
 
     <style>
+        #Photo{
+        height:200px;
+        width:auto;
+        }
+        
         #addTo {
             font-family: CRK_REG;
             font-size:20px;
@@ -109,10 +120,12 @@ FUNCTIONS
 // puts the items into the array and the calculates the prices
 addToCart = function (id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
-             //calculates price n puts shows it
+    //calculates price n puts shows it
     document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST)
     document.getElementById("itemList").innerHTML = QUANT()
-    console.log(PURCHASE_LIST)
+    
+    console.log(FIND_QUANT)
+ 
 
 }
 
@@ -124,12 +137,12 @@ addToCart = function (id) {
 
 // Prints
 const QUANT = () => {
-    let prodName ="" ;
+    let prodName = "";
     PURCHASE_LIST.forEach((item) => {
         prodName += item.name;
     });
     return prodName
-} 
+}
 
 //PARSE FLOAT CHECK LIKE THE UHHH TTHING "FLOAT" IS DECIMALS BALBLA PARSE READS SMTHN
 
@@ -140,6 +153,27 @@ const CALC_TOTAL = () => {
         total += parseFloat(item.price);
     });
     return total
+}
+
+
+/*
+so like.. 
+
+*/
+
+
+const FIND_QUANT = (_list, _item) => {
+
+    //item in finds the item in the list .. i think
+
+     if ( _item in _list) {
+
+          _list.find(_list => _item.quantity === );
+
+     } else {
+        
+     }
+
 }
 
 /***********extra functions**********/
