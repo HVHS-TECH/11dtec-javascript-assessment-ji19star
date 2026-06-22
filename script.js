@@ -168,7 +168,7 @@ const FIND_QUANT = (_list, _item) => {
 
      if ( _item in _list) {
 
-          _list.find(_list => _item.quantity === );
+          _list.find(_list => _item.quantity === item.id);
 
      } else {
         
