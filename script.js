@@ -115,17 +115,20 @@ PRODUCTS_CONTAINER.innerHTML = products;
 /**********
 FUNCTIONS
 ***********/
-
+var listo = {}
 // global function - no const or let
 // puts the items into the array and the calculates the prices
 addToCart = function (id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
+   
     //calculates price n puts shows it
     document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST)
     document.getElementById("itemList").innerHTML = QUANT()
-    
-    console.log(FIND_QUANT)
+   // document.getElementById("itemListtest").innerHTML = FIND_QUANT(PRODUCTS[id]);
+    //console.log("in cart", EXISTING_ITEM);
+    //console.log(FIND_QUANT(PRODUCTS[id]));
  
+    console.log(listo)
 
 }
 
@@ -162,16 +165,40 @@ so like..
 */
 
 
+
+const FIND_QUANT = () => {
+     if (listo[id]){
+        listo[id]++
+    }else{
+        listo[id] = 1
+    }
+   
+}
+
+
+/*
 const FIND_QUANT = (_list, _item) => {
 
-    //item in finds the item in the list .. i think
 
-     if ( _item in _list) {
+    //should be true
+    const ITEM_IN_CART = PURCHASE_LIST.find(PURCHASE_LIST => PURCHASE_LIST.item === _item);
 
-          _list.find(_list => _item.quantity === );
-
+     if (ITEM_IN_CART) {
+            ITEM_IN_CART.quantity =+ ITEM_IN_CART.quantity;
      } else {
-        
+         PRODUCTS.push(_item)
+     }
+}
+
+/*
+const FIND_QUANT = (PRODUCTS) => {
+
+    const ITEM_IN_CART = PRODUCTS.find(PRODUCTS => PRODUCTS.name === name);
+
+     if (ITEM_IN_CART) {
+            ITEM_IN_CART.quantity =+ ITEM_IN_CART.quantity;
+     } else {
+         PRODUCTS.push (item)
      }
 
 }
