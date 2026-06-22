@@ -177,17 +177,7 @@ const FIND_QUANT = () => {
 
 
 /*
-const FIND_QUANT = (_list, _item) => {
 
-
-    //should be true
-    const ITEM_IN_CART = PURCHASE_LIST.find(PURCHASE_LIST => PURCHASE_LIST.item === _item);
-
-     if (ITEM_IN_CART) {
-            ITEM_IN_CART.quantity =+ ITEM_IN_CART.quantity;
-     } else {
-         PRODUCTS.push(_item)
-     }
 }
 
 /*
