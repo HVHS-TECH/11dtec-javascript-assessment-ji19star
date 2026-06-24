@@ -27,18 +27,21 @@ const PRODUCTS = [
         name: "Malt Rye<br>",
         price: 17,
         photo: `<img src="bredImage/Bred_9.jpg" id="Photo">`,
+        quantity: null,
     },
     //2
     {
         name: "White Bread<br>",
         price: 2,
         photo: `<img src="bredImage/Bred_3.jpg" id="Photo">`,
+        quantity: null,
     },
     //3
     {
         name: "Cinnamon Scroll<br>",
         price: 12,
         photo: `<img src="bredImage/Bred_11.jpg" id="Photo">`,
+        quantity: null,
     }
 ];
 // the arrary which contains the items in cart
@@ -94,14 +97,6 @@ for (let id in PRODUCTS) {
 }
 
 
-for (let id in PRODUCTS) {
-    products += `
-    
-    `
-}
-
-
-
 
 
 
@@ -109,26 +104,32 @@ for (let id in PRODUCTS) {
 PRODUCTS_CONTAINER.innerHTML = products;
 
 
-
-
-
 /**********
 FUNCTIONS
 ***********/
-var listo = {}
+let quantity = {}
+
 // global function - no const or let
 // puts the items into the array and the calculates the prices
 addToCart = function (id) {
     PURCHASE_LIST.push(PRODUCTS[id]);
-   
+    //ADDS TO QUANTITY
+
+    if (quantity[id]) {
+        quantity[id]++
+    } else {
+        quantity[id] = 1;
+    }
+/*
+    for (let i = 0; i < 5; i++) {
+        text += "The number is " + i + "<br>";
+    }
+*/
     //calculates price n puts shows it
     document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST)
-    document.getElementById("itemList").innerHTML = QUANT()
-   // document.getElementById("itemListtest").innerHTML = FIND_QUANT(PRODUCTS[id]);
-    //console.log("in cart", EXISTING_ITEM);
-    //console.log(FIND_QUANT(PRODUCTS[id]));
- 
-    console.log(listo)
+    document.getElementById("itemList").innerHTML += ITEM_NAMEPRINT()+quantity[id]
+  //document.getElementById("itemListQ").innerHTML =  
+    console.log(quantity)
 
 }
 
@@ -139,7 +140,7 @@ addToCart = function (id) {
 
 
 // Prints
-const QUANT = () => {
+const ITEM_NAMEPRINT = () => {
     let prodName = "";
     PURCHASE_LIST.forEach((item) => {
         prodName += item.name;
@@ -166,19 +167,6 @@ so like..
 
 
 
-const FIND_QUANT = () => {
-     if (listo[id]){
-        listo[id]++
-    }else{
-        listo[id] = 1
-    }
-   
-}
-
-
-/*
-
-}
 
 /*
 const FIND_QUANT = (PRODUCTS) => {
