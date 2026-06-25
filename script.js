@@ -52,6 +52,10 @@ const PURCHASE_LIST = [];
 let products = "";
 let productsInCart = "";
 
+const QUANTITY_INPUT = document.getElementById("quantityField");
+
+
+
 /**********
 MAIN CODE
 ***********/
@@ -64,6 +68,10 @@ for (let id in PRODUCTS) {
         <div>${PRODUCTS[id].price}</div>
         <div>${PRODUCTS[id].photo}</div>
         <button id="addTo" onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
+        <form onsubmit="return false;">
+        <input type="text">
+        <input type="submit" id="quantityField" onclick="NUM_CHECK();" placeholder="0">
+        </form>
     </div>
 
     <style>
@@ -103,7 +111,6 @@ for (let id in PRODUCTS) {
 // inject the products html
 PRODUCTS_CONTAINER.innerHTML = products;
 
-
 /**********
 FUNCTIONS
 ***********/
@@ -126,28 +133,54 @@ addToCart = function (id) {
     }
 */
     //calculates price n puts shows it
-    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST)
-    document.getElementById("itemList").innerHTML += ITEM_NAMEPRINT()+quantity[id]
-  //document.getElementById("itemListQ").innerHTML =  
+    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
+    document.getElementById("itemList").innerHTML += ITEM_NAMEPRINT()+quantity[id];
+    
     console.log(quantity)
 
 }
 
 
-//anon , prints the stuffs onto theSS pages
+// is null why
+const NUM_CHECK =() =>{
+    let quantInput = QUANTITY_INPUT.value;
 
-//what was this again??
+    console.log("meow")
+    if (isNaN(quantInput)) {
+         console.log("wow")
+        document.getElementById("bugZone").innerHTML = `<p>Cannot use letters</p>`
+         throw new Error("ohno");  
+    }else{
+        console.log("bad")
+    }
+
+}
+
 
 
 // Prints
+
+PRODUCTS[id].name
+
 const ITEM_NAMEPRINT = () => {
     let prodName = "";
     PURCHASE_LIST.forEach((item) => {
         prodName += item.name;
+
     });
     return prodName
 }
 
+/*
+const ITEM_NAMEPRINT = () => {
+    let prodName = "";
+    PURCHASE_LIST.forEach((item) => {
+        prodName += item.name;
+
+    });
+    return prodName
+}
+*/
 //PARSE FLOAT CHECK LIKE THE UHHH TTHING "FLOAT" IS DECIMALS BALBLA PARSE READS SMTHN
 
 //anon function   calculates the prices of the itemsSSS
