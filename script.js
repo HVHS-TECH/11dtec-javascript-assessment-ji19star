@@ -69,7 +69,7 @@ for (let id in PRODUCTS) {
         <div>${PRODUCTS[id].photo}</div>
         <button id="addTo" onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
         <form onsubmit="return false;">
-        <input type="text">
+        <input type="number">
         <input type="submit" id="quantityField" onclick="NUM_CHECK();" placeholder="0">
         </form>
     </div>
@@ -116,9 +116,19 @@ FUNCTIONS
 ***********/
 let quantity = {}
 
+
+
+
+
+
+
+
 // global function - no const or let
 // puts the items into the array and the calculates the prices
+
 addToCart = function (id) {
+
+
     PURCHASE_LIST.push(PRODUCTS[id]);
     //ADDS TO QUANTITY
 
@@ -127,40 +137,44 @@ addToCart = function (id) {
     } else {
         quantity[id] = 1;
     }
-/*
-    for (let i = 0; i < 5; i++) {
-        text += "The number is " + i + "<br>";
-    }
-*/
-    //calculates price n puts shows it
-    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
-    document.getElementById("itemList").innerHTML += ITEM_NAMEPRINT()+quantity[id];
-    
+
+    `
+        <p>${PRODUCTS[id].name}</p>
+        <p>${PRODUCTS[id].price}<p>
+        <p>${PRODUCTS[id].quantity}</p>
+    `
+    DISPLAY_CART()
+
     console.log(quantity)
+}
+
+const DISPLAY_CART = () => {
+    document.getElementById("itemList").innerHTML = "";
+    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
+
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
+
+    }
 
 }
 
 
 // is null why
-const NUM_CHECK =() =>{
+const NUM_CHECK = () => {
     let quantInput = QUANTITY_INPUT.value;
 
-    console.log("meow")
-    if (isNaN(quantInput)) {
-         console.log("wow")
-        document.getElementById("bugZone").innerHTML = `<p>Cannot use letters</p>`
-         throw new Error("ohno");  
-    }else{
-        console.log("bad")
+    if (quantity[id]) {
+        quantInput + quantity[id]
     }
 
 }
 
 
 
-// Prints
+/* Prints
 
-PRODUCTS[id].name
+
 
 const ITEM_NAMEPRINT = () => {
     let prodName = "";
