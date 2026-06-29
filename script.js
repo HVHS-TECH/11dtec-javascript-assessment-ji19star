@@ -138,27 +138,45 @@ addToCart = function (id) {
         quantity[id] = 1;
     }
 
-    `
-        <p>${PRODUCTS[id].name}</p>
-        <p>${PRODUCTS[id].price}<p>
-        <p>${PRODUCTS[id].quantity}</p>
-    `
     DISPLAY_CART()
+
+
+    //document.getElementById("itemList").innerHTML = quantity[id]
+
+
 
     console.log(quantity)
 }
 
-const DISPLAY_CART = () => {
-    document.getElementById("itemList").innerHTML = "";
-    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
+const klnjkjkl = (id) => {
 
-    for (let index = 0; index < array.length; index++) {
-        const element = array[index];
-
+    if (quantity[id]) {
+        quantity[id]++
+    } else {
+        quantity[id] = 1;
     }
+
+    document.getElementById("itemList").innerHTML = quantity[id]
+
 
 }
 
+
+
+
+
+//put the names of the things in the array onto page  and the calc stuff
+const DISPLAY_CART = (id) => {
+    document.getElementById("itemList").innerHTML = "";
+    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
+
+//it doesnt work coimes up as object or undefined
+    for (let i = null; i < PURCHASE_LIST.length; i++) {
+    document.getElementById("itemList").innerHTML += PURCHASE_LIST[i]
+
+
+    }
+}
 
 // is null why
 const NUM_CHECK = () => {
@@ -173,24 +191,24 @@ const NUM_CHECK = () => {
 
 
 /* Prints
-
-
-
+ 
+ 
+ 
 const ITEM_NAMEPRINT = () => {
     let prodName = "";
     PURCHASE_LIST.forEach((item) => {
         prodName += item.name;
-
+ 
     });
     return prodName
 }
-
+ 
 /*
 const ITEM_NAMEPRINT = () => {
     let prodName = "";
     PURCHASE_LIST.forEach((item) => {
         prodName += item.name;
-
+ 
     });
     return prodName
 }
@@ -209,7 +227,7 @@ const CALC_TOTAL = () => {
 
 /*
 so like.. 
-
+ 
 */
 
 
@@ -217,17 +235,17 @@ so like..
 
 /*
 const FIND_QUANT = (PRODUCTS) => {
-
+ 
     const ITEM_IN_CART = PRODUCTS.find(PRODUCTS => PRODUCTS.name === name);
-
+ 
      if (ITEM_IN_CART) {
             ITEM_IN_CART.quantity =+ ITEM_IN_CART.quantity;
      } else {
          PRODUCTS.push (item)
      }
-
+ 
 }
-
+ 
 /***********extra functions**********/
 
 //go to top of the pagw
