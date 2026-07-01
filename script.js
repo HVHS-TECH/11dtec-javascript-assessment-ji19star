@@ -69,7 +69,7 @@ for (let id in PRODUCTS) {
         <div>${PRODUCTS[id].photo}</div>
         <button id="addTo" onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
         <form onsubmit="return false;">
-        <input type="number">
+        <input type="number" max="5">
         <input type="submit" id="quantityField" onclick="NUM_CHECK();" placeholder="0">
         </form>
     </div>
@@ -138,16 +138,19 @@ addToCart = function (id) {
         quantity[id] = 1;
     }
 
-    DISPLAY_CART()
+
+    
+   DISPLAY_CART()
 
 
     //document.getElementById("itemList").innerHTML = quantity[id]
-
-
-
+/*
+    const element = document.getElementById("itemList").innerHTML += ITEM_NAMEPRINT()+quantity[id]+`<br>`
+    document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
+*/
     console.log(quantity)
 }
-
+//TEST
 const klnjkjkl = (id) => {
 
     if (quantity[id]) {
@@ -166,18 +169,22 @@ const klnjkjkl = (id) => {
 
 
 //put the names of the things in the array onto page  and the calc stuff
+
+//doesnt work....
 const DISPLAY_CART = (id) => {
+
     document.getElementById("itemList").innerHTML = "";
     document.getElementById("cart").innerHTML = CALC_TOTAL(PURCHASE_LIST);
 
 //it doesnt work coimes up as object or undefined
+
+
     for (let i = null; i < PURCHASE_LIST.length; i++) {
-    document.getElementById("itemList").innerHTML += PURCHASE_LIST[i]
+    document.getElementById("itemList").innerHTML += JSON.stringify(PURCHASE_LIST[i].name)
+} 
 
-
-    }
+console.log (PURCHASE_LIST)
 }
-
 // is null why
 const NUM_CHECK = () => {
     let quantInput = QUANTITY_INPUT.value;
@@ -190,10 +197,10 @@ const NUM_CHECK = () => {
 
 
 
-/* Prints
+
  
  
- 
+ /*
 const ITEM_NAMEPRINT = () => {
     let prodName = "";
     PURCHASE_LIST.forEach((item) => {
