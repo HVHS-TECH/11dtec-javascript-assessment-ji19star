@@ -54,6 +54,8 @@ let productsInCart = "";
 
 const QUANTITY_INPUT = document.getElementById("quantityField");
 
+let UserCash = 420;
+
 
 
 /**********
@@ -68,6 +70,7 @@ for (let id in PRODUCTS) {
         <div>${PRODUCTS[id].price}</div>
         <div>${PRODUCTS[id].photo}</div>
         <button id="addTo" onclick="addToCart('${id}'), console.log(PURCHASE_LIST)">Add to Cart</button>
+        
         <form onsubmit="return false;">
         <input type="number" max="5">
         <input type="submit" id="quantityField" onclick="NUM_CHECK();" placeholder="0">
@@ -150,7 +153,7 @@ addToCart = function (id) {
 */
     console.log(quantity)
 }
-//TEST
+/*
 const klnjkjkl = (id) => {
 
     if (quantity[id]) {
@@ -162,9 +165,13 @@ const klnjkjkl = (id) => {
     document.getElementById("itemList").innerHTML = quantity[id]
 
 
+} */
+
+const CHECKOUT = () => {
+
+    
+
 }
-
-
 
 
 
@@ -178,9 +185,10 @@ const DISPLAY_CART = (id) => {
 
 //it doesnt work coimes up as object or undefined
 
-
-    for (let i = null; i < PURCHASE_LIST.length; i++) {
-    document.getElementById("itemList").innerHTML += JSON.stringify(PURCHASE_LIST[i].name)
+console.log(PURCHASE_LIST)
+    for (let i = 0; i < PURCHASE_LIST.length; i++) {
+        console.log(PURCHASE_LIST[i])
+    document.getElementById("itemList").innerHTML += PURCHASE_LIST[i].name 
 } 
 
 console.log (PURCHASE_LIST)
